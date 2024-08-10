@@ -105,4 +105,53 @@ public class BasicMaths {
         
         return (sumOfNumberCube == n?true:false);
     }
+
+    public static boolean isPerfectBrute(int n) {
+        int divisorsSum = 0;
+
+        for(int i=1;i<n;i++){
+            if(n%i ==0)
+                divisorsSum+=i;
+        }
+        return (divisorsSum==n?true:false);
+    }
+
+    public static boolean isPerfectOptimized(int n) {
+        int divisorsSum = 1;
+
+        for(int i=2;i<=Math.sqrt(n);i++){ //  Math.sqrt(n) is similar to i*i<=n
+            if(n%i ==0){
+                divisorsSum+=i;
+                if(i != (n/i) )
+                    divisorsSum+=(n/i);
+            }
+        }
+        return (divisorsSum==n?true:false);
+    }
+
+    public static boolean isPrimeBrute(int n) {
+        for(int i=2;i<n;i++){
+            if(n%i == 0)
+                return false;
+        }
+        return true;
+    }
+
+    public static boolean isPrimeOptimized(int n) {
+        for(int i=2;i<=Math.sqrt(n);i++){ //  Math.sqrt(n) is similar to i*i<=n
+            if(n%i == 0)
+                return false;
+        }
+        return true;
+    }
+
+    public static int primeUptoN(int n) {
+        int count = 0;
+        for(int i=2;i<=n;i++){
+            if(isPrimeOptimized(i))
+                count++;
+        }
+        return count;
+    }
+    
 }

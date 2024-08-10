@@ -31,5 +31,20 @@ public class Main {
 
         boolean armstrong = BasicMaths.isArmstrong(370);
         System.out.println("Number 370 is 💪ArmStrong "+armstrong);
+
+        boolean isPerfect = BasicMaths.isPerfectBrute(6);
+        System.out.println("Brute : Number 6 is perfect "+isPerfect); //1 + 2 + 3 = 6.
+
+        isPerfect = BasicMaths.isPerfectOptimized(6);
+        System.out.println("Optimized : Number 6 is perfect "+isPerfect); //1 + 2 + 3 = 6.
+
+        boolean isPrime = BasicMaths.isPrimeBrute(9);
+        System.out.println("Number 9 is prime "+isPrime);
+
+        isPrime = BasicMaths.isPrimeOptimized(9);
+        System.out.println("Number 9 is prime "+isPrime);
+
+        int primeCount = BasicMaths.primeUptoN(10);
+        System.out.println("Primes upto 10 are "+primeCount);
     }
 }
