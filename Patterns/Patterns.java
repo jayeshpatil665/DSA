@@ -1,18 +1,54 @@
 public class Patterns {
     
     public static void patternOne(int n){
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 
     public static void patternTwo(int n){
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 
     public static void patternThree(int n){
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print(j);
+            }
+            System.out.println();
+        }
     }
 
     public static void patternFour(int n){
         for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print(i);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void patternFourOne(int n){
+        for(int i=1;i<=n;i++){
             for(int j=0;j<=n-i;j++){
                 System.out.print(" * ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void patternFourTwo(int n){
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n-i+1;j++){
+                System.out.print("*");
             }
             System.out.println();
         }

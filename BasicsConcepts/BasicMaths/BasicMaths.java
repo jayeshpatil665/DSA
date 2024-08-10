@@ -1,0 +1,108 @@
+public class BasicMaths {
+    
+    public static int countDigitsOfNumber(int num){
+        if(num==0)
+            return 1;
+
+        if(num<0)
+            num = Math.abs(num);
+        int count = 0;
+
+        while (num>0) {
+            num = num/10;
+            count++;
+        }
+        return count;
+    }
+
+    public static int countOddDigits(int num){
+        int count = 0;
+
+        while (num>0) {
+            int digit = num%10;
+            num = num/10;
+
+            if(digit%2 != 0)
+                count++;
+        }
+
+        return count;
+    }
+
+    public static int reverseNumber(int n) {
+        int revNum = 0;
+
+        if(n==0)
+            return revNum;
+
+        while(n>0){
+            int digit = n%10;
+            revNum = revNum*10 + digit;
+            n = n/10;
+        }
+
+        return revNum;
+    }
+
+    public static boolean isPalindrome(int n) {
+        int revNum = 0;
+        int ogNumber = n;
+
+
+        while(ogNumber>0){
+            int digit = ogNumber%10;
+            revNum = revNum*10 + digit;
+            ogNumber = ogNumber/10;
+        } 
+
+        return (n==revNum?true:false);
+    }
+
+    public static int largestDigit(int n) {
+        int largestDigit = 0;
+
+        if(n==0)
+            return largestDigit;
+
+        while(n>0){
+            int digit = n%10;
+
+            if(digit>largestDigit)
+                largestDigit = digit;
+
+            n = n/10;
+        }
+
+        return largestDigit;
+    }
+
+    public static int factorial(int n) {
+        int fact = 1;
+
+        if(n==1 || n==0)
+            return fact;
+
+        int number = n;
+
+        while(number>1){
+            fact = fact * number;
+            number--;
+        }
+        return fact;
+    }
+
+    public static boolean isArmstrong(int n) {
+        int digitsCount = (int) Math.log10(n)+1; //String.valueOf(n).length();
+        long sumOfNumberCube = 0;
+        int ogNumber = n;
+
+        while(ogNumber>0){
+            int digit = ogNumber%10;
+            sumOfNumberCube += (int) Math.pow(digit,digitsCount);
+            System.out.println("digit : "+digit+"^"+digitsCount);
+            ogNumber = ogNumber/10;
+        }
+        
+        return (sumOfNumberCube == n?true:false);
+    }
+}
