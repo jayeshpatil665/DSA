@@ -1,44 +1,44 @@
-public class ArrayStack {
-    protected int top;
-    protected int capacity;
-    protected int stack[];
+class ArrayStack {
 
-    public ArrayStack(int size){
-        this.capacity = size;
+    private int top;
+    private int capacity;
+    private int stack[];
+
+    public ArrayStack(int size) {
+        capacity = size;
         stack = new int[capacity];
         top = -1;
     }
 
-    public void push(int element) throws Exception{
-        if(size()==capacity)
-            throw new Exception("Stack is Overflow !");
-
-        top++;    
-        stack[top]=element;
+    public ArrayStack(){
+        this(1000);
     }
 
-    public int pop() throws Exception{
-        if(top==-1)
-            throw new Exception("Stack is Underflow");
-
-       int bkpElement = stack[top];
-       top--;
-       return bkpElement;
+    public void push(int x) {
+       if(top >=capacity -1){
+        System.out.println("Stack overflow");
+        return;
+       }
+       stack[++top] = x;
     }
 
-    public int peek() throws Exception{
-        if(top==-1)
-            throw new Exception("Stack is empty");
+    public int pop() {
+      if(isEmpty()){
+        System.out.println("Stack is underflow");
+        return -1;
+      }
+      return stack[top--];
+    }
 
+    public int top() {
+        if(isEmpty()){
+            System.out.println("Stack is empty");
+            return -1;
+        }
         return stack[top];
     }
 
-    public int size(){
-        return top+1;
-    }
-
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return (top<0);
     }
-
 }
