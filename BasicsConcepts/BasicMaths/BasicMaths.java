@@ -154,4 +154,47 @@ public class BasicMaths {
         return count;
     }
     
+    public static int GCD(int n1, int n2) {
+        int minimum = (n1<n2?n1:n2);
+        int gcd = 1;
+        for(int i=minimum;i>1;i--){
+            if(n1%i == 0 && n2%i == 0)
+                return i;
+        }
+        return gcd;
+    }
+
+    public static int GCDoptimized(int n1, int n2) { // Time complexity = O(log(Min(n1,n2)))
+        //solved with euclidian algorithm
+        //System.out.println(Math.min(n1,n2));
+        while(n1 != 0 && n2 != 0){
+            if(n1>n2)
+                n1 = n1%n2;
+            else
+                n2 = n2%n1;
+                
+            //System.out.println("n1 : "+n1+" | n2 : "+n2);        
+        }
+        //System.out.println("GCD is : "+Math.max(n1,n2));
+        return(Math.max(n1, n2));
+    }
+
+    public static int LCM(int n1, int n2) { // Time complexity = O(n1 * n2)
+        int i=1;
+        int maximum = Math.max(n1,n2);
+
+        do{
+            int multiple = i * maximum;
+            if(multiple%n1== 0 && multiple%n2 == 0)
+                return multiple;
+
+            i++;    
+        }while(true);
+    }
+
+    public static int LCMoptimized(int n1, int n2) {
+        //concept of GCD is used here
+        return (n1*n2)/GCD(n1,n2);  //Time complexity = O(log(Min(n1,n2)))
+    } 
+
 }

@@ -2,6 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
         
+        
         int count = BasicMaths.countDigitsOfNumber(-1234);
         System.out.println("1234 contains "+count+" digits");
 
@@ -46,5 +47,17 @@ public class Main {
 
         int primeCount = BasicMaths.primeUptoN(10);
         System.out.println("Primes upto 10 are "+primeCount);
+
+        int gcd = BasicMaths.GCD(4, 6);
+        System.out.println("GCD of 4 & 6 is : "+gcd);
+
+        gcd = BasicMaths.GCDoptimized(4,6);
+        System.out.println("Using EuclidianAlgorithm : GCD of 4 & 6 is : "+gcd);
+
+        int lcm = BasicMaths.LCM(4, 6);
+        System.out.println("lcm of 4 & 6 is : "+lcm);
+
+        lcm = BasicMaths.LCMoptimized(4,6);
+        System.out.println("Using EuclidianAlgorithm of GCD : LCM of 4 & 6 is : "+lcm);
     }
 }

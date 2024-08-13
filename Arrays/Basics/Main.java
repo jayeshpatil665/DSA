@@ -25,5 +25,23 @@ public class Main {
 
         ArraysDemo.leftRotateByNplaces(arr, 3);
         ArraysDemo.printArray(arr);
+
+        //Copy element sof array one into array two
+        int arrOne[] = {10,20,30,40,50,60,70,80,90,100};
+        int arrTwo[] = Arrays.copyOf(arrOne,20);
+        
+        System.out.println("Second Array length is : "+arrTwo.length);
+        for(int element : arrTwo){
+            System.out.println(element);
+        }
+
+        System.out.println("Print all divisors of int n");
+        
+        for(int element : ArraysDemo.divisors(8)){
+            System.out.print(element+", ");
+        }
+
+        boolean isSorted = ArraysDemo.isArraySorted(arrOne);
+        System.out.println("Array one is sorted : "+isSorted);
     }
 }
