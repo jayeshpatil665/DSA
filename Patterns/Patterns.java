@@ -106,4 +106,64 @@ public class Patterns {
         }
     }
 
+    public static void pattern9(int n) {
+
+        for(int i=1;i<=n;i++){
+            int j=1;
+            for(;j<=n-i;j++){
+                System.out.print(" ");
+            }
+            for(;j<=n;j++){
+                System.out.print("*");
+            }
+            
+            for(j=1;j<i;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        for(int i=1;i<=n;i++){
+            int j=1;
+            for(;j<i;j++){
+                System.out.print(" ");
+            }
+            for(;j<=n;j++){
+                System.out.print("*");
+            }
+            
+            for(j=1;j<=n-i;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    public void pattern10(int n) {
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        for(int i=1;i<n;i++){
+            for(int j=1;j<=n-i;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    public void pattern11(int n) {
+        for(int i=1;i<=n;i++){
+            boolean bit = (i%2==0?false:true);
+            for(int j=1;j<=i;j++){
+                System.out.print(((bit)?1:0)+" ");
+                bit = !bit;
+            }
+            System.out.println();
+        }
+    }
+
 }

@@ -40,4 +40,17 @@ public class DemoRecursion {
         
         return addDigits(sum);
     }
+
+    //Sum of array elements
+    public int sum(int[] nums,int i){
+        if(i==0)
+            return nums[i];
+
+        return nums[i] + sum(nums,--i);    
+    }
+
+    public int arraySum(int[] nums) {
+        //your code goes here
+        return sum(nums,nums.length-1);
+    }
 }
