@@ -166,4 +166,71 @@ public class Patterns {
         }
     }
 
+    public void pattern12(int n) {
+
+        int spaceSize = n;
+        for(int i=1;i<=n;i++){
+            int j=1;
+            for(;j<=i;j++){
+                System.out.print(j);
+            }
+
+            for(int l=spaceSize;l>1;l--)
+                System.out.print("  ");
+
+            for(int k=i;k>=1;k--){
+                 System.out.print(k);
+            }
+
+            System.out.println();
+            spaceSize--;
+        }
+
+    }
+
+    public void pattern13(int n) {
+
+        int count = 1;
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print(count+" ");
+                count++;
+            }
+            System.out.println();
+        }
+    }
+
+    public void pattern14(int n) {
+
+        for(int i=1;i<=n;i++){
+            char ch = 'A';
+            for(int j=1;j<=i;j++){
+                System.out.print(ch++);
+            }
+            System.out.println();
+        }
+    }
+
+    public void pattern15(int n) {
+        for(int i=1;i<=n;i++){
+            char ch = 'A';
+            for(int j=i;j<=n;j++){
+                System.out.print(ch++);
+            }
+            System.out.println();
+        }
+    }
+
+    public void pattern16(int n) {
+
+        char ch = 'A';
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print(ch);
+            }
+            System.out.println();
+            ch++;
+        }
+    }
+
 }
