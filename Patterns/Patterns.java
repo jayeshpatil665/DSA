@@ -233,4 +233,169 @@ public class Patterns {
         }
     }
 
+    public void pattern17(int n) {
+
+        for(int i=1;i<=n;i++){
+
+            int j=1;
+            //spaces
+            for(;j<=n-i;j++){
+                System.out.print(" ");
+            }
+
+            char ch = 'A';
+            //pattern partOne
+            for(;j<=n;j++){
+                System.out.print(ch++);
+            }
+
+            ch--;
+            //pattern partTwo
+            for(j=1;j<i;j++){
+                System.out.print(--ch);
+            }
+
+            System.out.println();
+        }
+    }
+
+    public void pattern18(int n) {
+
+        for(int i=1;i<=n;i++){
+            char ch = 'A';
+            for(int j=1;j<=i;j++){
+               int charVal =  ch + n-i;
+                System.out.print((char) (charVal)+" ");
+                ch++;
+            }
+            System.out.println();
+        }
+    }
+
+    public void pattern19(int n) {
+
+        for(int i=1;i<=n;i++){
+            //print patternOne
+            for(int j=n;j>=i;j--){
+                System.out.print("*");
+            }
+
+            //print spaces
+            for(int k=1;k<i;k++){
+                System.out.print("  ");
+            }
+
+            //print patternTwo
+            for(int j=n;j>=i;j--){
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }        
+
+        for(int i=1;i<=n;i++){
+            //print patternOne
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+
+            //print spaces
+            for(int k=n;k>i;k--){
+                System.out.print("  ");
+            }
+
+            //print patternTwo
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }  
+    }
+
+    public void pattern20(int n) {
+
+        for(int i=1;i<n;i++){
+            //print patternOne
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+
+            //print spaces
+            for(int k=n-1;k>=i;k--){
+                System.out.print("  ");
+            }
+
+            //print patternTwo
+            for(int j=1;j<=i;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        for(int i=1;i<=n;i++){
+            //print patternOne
+            for(int j=n;j>=i;j--){
+                System.out.print("*");
+            }
+
+            //print spaces
+            for(int k=1;k<i;k++){
+                System.out.print("  ");
+            }
+
+            //print patternTwo
+            for(int j=n;j>=i;j--){
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }   
+    }
+
+    public void pattern21(int n) {
+
+        for(int i=1;i<=n;i++){
+
+            if(i==1 || i==n){
+                for(int j=1;j<=n;j++)
+                    System.out.print("*");
+            }
+            else{
+                for(int k=1;k<=n;k++){
+                    if(k==1 || k==n)
+                        System.out.print("*");
+                    else    
+                        System.out.print(" ");
+                }
+            }
+            
+            System.out.println();
+        }
+
+    }
+
+    public void pattern22(int n) {
+
+        int x = (n+(n-1));
+        int num = n;
+        for(int i=0;i<x;i++){
+            
+            for(int j=0;j<x;j++){
+                int top = i;
+                int bottom = j;
+                int right = x-j-1;
+                int left = x-i-1;
+
+                System.out.print(
+                    (n - Math.min(
+                        Math.min(top,bottom),
+                        Math.min(left,right))
+                    ) +" ");
+            }
+
+            System.out.println();
+        }
+    }
+
 }

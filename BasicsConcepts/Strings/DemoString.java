@@ -32,4 +32,64 @@ public class DemoString {
         return true;
     }
 
+    public static void sortString(String str){
+        //move characters to start and digits to end
+        System.out.println("You have entered str : "+str);
+
+        String charString = "";
+        String digitString = "";
+        for(int i=0;i<str.length();i++){
+
+            try {
+                Integer.parseInt(""+str.charAt(i));
+                digitString = digitString.concat(""+str.charAt(i));
+            } catch (java.lang.NumberFormatException e) {
+              // System.out.println(e.getMessage());
+
+              charString = charString.concat(""+str.charAt(i));
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        System.out.println("output charString : "+charString);
+        System.out.println("output digitString : "+digitString);
+        System.out.println(charString+digitString);
+    }
+
+
+    public String shiftByOne(String str){
+        char ch = str.charAt(str.length()-1);
+
+        //System.out.println(str.charAt(str.length()-1));
+        //System.out.println(str.substring(0,str.length()-1));
+        String output = ch +""+str.substring(0,str.length()-1);
+       return  output;
+   }
+
+   public boolean rotateString(String s, String goal) {
+
+       if(s.equals(goal))
+           return true;
+
+       if(s.length()!= goal.length())
+           return false;    
+
+       String str = s+s; //s.concat(s);
+       if(str.contains(goal))
+               return true;
+
+      /* String str = s;
+       for(int i=0;i<s.length()-1;i++){
+           str = shiftByOne(str);
+           //System.out.println(str);
+
+           if(str.equals(goal))
+               return true;
+       }*/
+
+       return false;
+   }
+
 }
