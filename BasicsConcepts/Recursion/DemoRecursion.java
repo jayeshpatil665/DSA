@@ -1,3 +1,5 @@
+import java.util.Vector;
+
 public class DemoRecursion {
 
     public static int NnumbersSum(int N) {
@@ -52,5 +54,101 @@ public class DemoRecursion {
     public int arraySum(int[] nums) {
         //your code goes here
         return sum(nums,nums.length-1);
+    }
+
+    //-------------------------
+    public static Vector<Character> reverseString(Vector<Character> s) {
+        
+        for(int i=0;i<s.size();i++){
+            System.out.print(s.elementAt(i));
+        }
+        System.out.println();
+
+        int startPrt = 0,endPrt=s.size()-1;
+        while (startPrt<endPrt) {
+            char chStart = s.elementAt(startPrt);
+            s.setElementAt(s.elementAt(endPrt),startPrt);
+            s.setElementAt(chStart, endPrt);
+            startPrt++;
+            endPrt--;
+        }
+
+        return s;
+    }
+    public static Vector<Character> reverseIt(Vector<Character> s,int startPtr,int endPtr){
+        //terminating condition
+        if(startPtr>endPtr)
+            return s;
+
+        //small task
+        char bkpCh = s.elementAt(startPtr);
+        s.setElementAt(s.elementAt(endPtr),startPtr);
+        s.setElementAt(bkpCh,endPtr);
+
+        s = reverseIt(s,++startPtr,--endPtr);
+        return s;
+    }
+
+    //--------------------
+    public String reverseString(char[] s,int startPtr,int endPtr){
+
+        if(! (startPtr<endPtr))
+            return new String(s);
+
+        //small work
+        char bkpCh = s[startPtr];
+        s[startPtr] = s[endPtr];
+        s[endPtr] = bkpCh;
+
+        return reverseString(s,++startPtr,--endPtr);
+    }
+
+
+    public boolean palindromeCheck(String s) {
+        //your code goes here
+        int startPtr = 0;
+        int endPtr = s.length()-1;
+        String str = reverseString(s.toCharArray(),startPtr,endPtr);
+        if(s.equals(str))
+            return true;
+        else
+            return false;    
+    }
+
+    //----------------
+    public boolean primeCheck(int num,int i){
+        if(i > Math.sqrt(num)) //if(i == num)
+            return true;
+
+        if(num%i == 0)
+            return false;
+
+        return primeCheck(num,++i);    
+    }
+    public boolean checkPrime(int num) {
+        
+        if(num <= 1)
+            return false;
+
+        return primeCheck(num,2);
+    }
+
+    //-----------------
+    public int[] reverseArr(int[] arr,int startPtr,int endPtr){
+
+        if(! (startPtr<endPtr))
+            return arr;
+
+        //small work
+        int bkpElement = arr[startPtr];
+        arr[startPtr] = arr[endPtr];
+        arr[endPtr] = bkpElement;
+
+        return reverseArr(arr,++startPtr,--endPtr);
+    }
+
+    public int[] reverseArray(int[] nums) {
+        
+        return reverseArr(nums,0,nums.length-1);
     }
 }
