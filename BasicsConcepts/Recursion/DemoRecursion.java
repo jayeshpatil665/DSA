@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Vector;
 
 public class DemoRecursion {
@@ -150,5 +151,34 @@ public class DemoRecursion {
     public int[] reverseArray(int[] nums) {
         
         return reverseArr(nums,0,nums.length-1);
+    }
+
+    //-------------
+    public int fib(int n) {
+        if(n==0) 
+            return 0;
+        if(n==1)
+            return 1;    
+
+        return fib(n-1) + fib(n-2);
+    }
+    //---------------
+    public boolean checkSorted(ArrayList<Integer> nums,int i){
+
+        if(i == nums.size())
+            return true;
+
+        if(nums.get(i) < nums.get(i-1))
+            return false;
+
+       return checkSorted(nums,++i);
+    }
+
+    public boolean isSorted(ArrayList<Integer> nums) {
+       
+       if(nums.size() <= 1)
+        return true;
+
+       return checkSorted(nums,1);
     }
 }
