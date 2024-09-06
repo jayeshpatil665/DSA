@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Vector;
 
 public class DemoString {
@@ -91,5 +92,23 @@ public class DemoString {
 
        return false;
    }
+
+    public boolean anagramStrings(String s, String t) {
+        
+        if(s.length() != t.length())
+            return false;
+
+        char arrS[] = s.toCharArray();
+        char arrT[] = t.toCharArray();
+
+        Arrays.sort(arrS);
+        Arrays.sort(arrT);
+
+       /* String strS = new String(arrS);
+        String strT = new String(arrT);
+        return (strS.equals(strT))? true : false;*/
+
+        return Arrays.equals(arrS,arrT);
+    }
 
 }
